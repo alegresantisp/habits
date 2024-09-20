@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { FaUser, FaSignOutAlt  } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthContext';
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -43,7 +45,7 @@ const Navbar = () => {
                 <svg className="w-8 h-8 text-yellow-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2L2 12h4v8h8v-8h4V2z" fill="currentColor"/>
                 </svg>
-                <span className="text-2xl font-bold items-center">SAS HT</span>
+                <Link href="/explanation" className="text-2xl font-bold items-center">SAS HT</Link>
               </div>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-4 ml-auto">
@@ -52,9 +54,12 @@ const Navbar = () => {
               </Link>
               {user ? (
                 <>
-                  <span className="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <MdOutlineDashboardCustomize  className="inline mr-1" />
+                 </Link>
+                 <Link href="/" className="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
                     Hola, {user.displayName || 'Usuario'}
-                  </span>
+                  </Link>
                   <button
                     onClick={signOut}
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -79,9 +84,10 @@ const Navbar = () => {
           </Link>
           {user ? (
             <>
-              <span className="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">
-                Hola, {user.displayName || 'Usuario'}
-              </span>
+             
+              <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+                Dashboard
+              </Link>
               <button
                 onClick={signOut}
                 className="text-gray-300 hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"

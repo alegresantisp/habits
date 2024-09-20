@@ -2,6 +2,7 @@
 
 import { collection, getDocs, addDoc  } from 'firebase/firestore';
 import { db } from '../lib/firebaseConfig';
+import Habit from '../interfaces/IHabit'
 
 // Obtener hábitos de Firestore
 export const getHabits = async () => {
@@ -11,11 +12,6 @@ export const getHabits = async () => {
   return habitList;
 };
 
-// Agregar un nuevo hábito
-interface Habit {
-    name: string;
-    userId: string; // Asegúrate de que el habit tenga un userId
-  }
   
   export const addHabit = async (habit: Habit) => {
     try {
