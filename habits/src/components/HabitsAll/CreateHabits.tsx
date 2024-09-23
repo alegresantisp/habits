@@ -61,6 +61,7 @@ const CreateHabits = () => {
             text: 'Tu nuevo hábito ha sido añadido.',
           });
         } catch (error) {
+          console.error(error); // Muestra el error en la consola
           Swal.fire({
             icon: 'error',
             title: 'Error',
