@@ -1,11 +1,17 @@
 'use client';
-import React from 'react';
 import { useAuth } from '../Context/AuthContext'; 
 import Link from 'next/link';
 import MyHabits from '../HabitsAll/myHabits';
+import Calendar from '../Calendar/Calendar';
+import Graphics from '../Graphics/Graphics'; 
+import Graphics1 from '../Graphics/Graphics1';
+
+
+import { useHabitContext } from '../Context/HabitContext';
 
 const LandingPage = () => {
   const { user } = useAuth(); 
+  const { habits } = useHabitContext(); 
 
   return (
     <div className="min-h-screen bg-white p-6">
@@ -36,7 +42,18 @@ const LandingPage = () => {
           <p className="text-gray-600 mb-4">Configura recordatorios para mantenerte en el camino correcto.</p>
           <a href="/reminders" className="text-blue-500 hover:underline">Configurar</a>
         </div>
-        {/* Agrega más tarjetas aquí si es necesario */}
+        
+      </div>
+      <div className="flex space-x-6 mt-4">
+        <div className="flex-1">
+          <Calendar />
+        </div>
+        <div className="flex-1">
+          <Graphics habits={habits} />
+        </div>
+        <div className="flex-1">
+          <Graphics1 habits={habits} /> 
+        </div>
       </div>
     </div>
   );

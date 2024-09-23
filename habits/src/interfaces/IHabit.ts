@@ -7,6 +7,6 @@ export default interface Habit {
     frequency: string;
     reminderTime?: string | null;
     userId: string;
-    isCompleted?: boolean; // Inicialmente puede estar en false o no asignarse
+    isCompleted?: boolean[]; // Inicialmente puede estar en false o no asignarse
     streakCount?: number;  // Se inicializa en 0 si se requiere después
   }
