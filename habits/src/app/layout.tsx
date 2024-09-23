@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar/NavBar";
 import { AuthProvider } from "@/components/Context/AuthContext";
 import { HabitProvider } from "@/components/Context/HabitContext";
+import Footer from "@/components/Footer/Footer";
 
 
 const geistSans = localFont({
@@ -36,6 +37,7 @@ export default function RootLayout({
            <HabitProvider> 
               <NavBar/>
               {children}
+              <Footer/>
             </HabitProvider>
         </AuthProvider>
       </body>

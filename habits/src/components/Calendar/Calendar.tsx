@@ -1,13 +1,23 @@
 'use client'
-import React, {  useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import {  updateHabit } from '../../helpers/habitsHelpers';
 import Habit from '../../interfaces/IHabit';
 import { useHabitContext } from '../Context/HabitContext';
 
 const Calendar: React.FC = () => {
-    const { habits, setHabits } = useHabitContext();
+  const { habits, setHabits, refreshHabits } = useHabitContext();
   const [expandedHabit, setExpandedHabit] = useState<string | null>(null);
 
+  useEffect(() => {
+    const fetchHabits = async () => {
+      try {
+        await refreshHabits();
+      } catch (error) {
+        console.error("Error fetching habits:", error);
+      }
+    };
+    fetchHabits();
+  }, [refreshHabits]);
 
   const handleCheckboxChange = async (habitId: string, index: number) => {
     const updatedHabits = habits.map(habit => {
@@ -125,24 +135,26 @@ const Calendar: React.FC = () => {
   };
 
   return (
-    <div className="p-4 bg-gradient-to-r from-green-200 to-blue-200 rounded-lg shadow-lg">
-      {habits.length > 0 ? (
-        habits.map(habit => (
-          <div key={habit.id} className="habit mb-4 p-4 border border-gray-300 rounded-lg shadow-md">
-            <h3 
-              className="text-xl font-bold mb-3 text-green-800 cursor-pointer"
-              onClick={() => toggleHabitExpansion(habit.id!)}
-            >
-              {habit.name}
-            </h3>
-            {expandedHabit === habit.id && renderCheckboxes(habit)}
-          </div>
-        ))
-      ) : (
+        <div className="p-4 bg-blue-50 rounded-lg shadow-lg">
+        {habits.length > 0 ? (
+        habits
+            .filter(habit => habit.id && habit.name)  // Filtrar hábitos válidos
+            .map(habit => (
+            <div key={habit.id} className="habit mb-4 p-4 border border-gray-300 rounded-lg shadow-md">
+                <h3 
+                className="text-xl font-bold mb-3 text-green-800 cursor-pointer"
+                onClick={() => toggleHabitExpansion(habit.id!)}
+                >
+                {habit.name}
+                </h3>
+                {expandedHabit === habit.id && renderCheckboxes(habit)}
+            </div>
+            ))
+        ) : (
         <p className="text-gray-600">No hay hábitos disponibles.</p>
-      )}
+        )}
     </div>
-  );
+    );
 };
 
 export default Calendar;
