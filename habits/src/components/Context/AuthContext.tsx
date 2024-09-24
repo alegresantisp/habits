@@ -5,6 +5,8 @@ import { auth } from '../../lib/firebaseConfig';
 import { onAuthStateChanged, signOut as firebaseSignOut, User } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { loginWithEmail } from '@/helpers/authHelpers';
+import Cookies from 'js-cookie';
+
 
 interface AuthContextType {
   user: User | null;
@@ -23,10 +25,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        localStorage.setItem('userId', currentUser.uid); // Guardar el UID
         localStorage.setItem('userName', currentUser.displayName || '');
+        Cookies.set('auth_token', currentUser.uid, { expires: 7, path: '/' });
       } else {
         setUser(null);
+        localStorage.removeItem('userId'); // Eliminar el UID
         localStorage.removeItem('userName');
+        Cookies.remove('auth_token');
       }
     });
 
@@ -36,7 +42,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const login = async (email: string, password: string) => {
     try {
       await loginWithEmail(email, password);
-      router.push('/');
+      router.push('/landing');
     } catch (error) {
       console.error('Error de autenticación:', error);
     }
@@ -54,6 +60,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const signOut = async () => {
     try {
       await firebaseSignOut(auth);
+      Cookies.remove('auth_token');
       router.push('/login');
     } catch (error) {
       console.error('Error al cerrar sesión:', error);

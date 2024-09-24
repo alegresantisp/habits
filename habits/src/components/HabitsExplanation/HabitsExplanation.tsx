@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
 import { BsFillQuestionCircleFill } from 'react-icons/bs';
 
-
 const sections = [
   {
     id: 'whatAreHabits',
@@ -19,7 +18,7 @@ const sections = [
   {
     id: 'importanceOfHabits',
     title: '¿Por Qué Son Importantes?',
-    content: `Los hábitos son fundamentales porque son la base de nuestro comportamiento diario y pueden tener un impacto significativo en nuestro éxito personal y profesional. `,
+    content: `Los hábitos son fundamentales porque son la base de nuestro comportamiento diario y pueden tener un impacto significativo en nuestro éxito personal y profesional.`,
   },
 ];
 
@@ -31,16 +30,7 @@ const HabitsExplanation = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
-      {/* Video de fondo */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-        autoPlay
-        muted
-        loop
-        src="https://res.cloudinary.com/dhli2ym3v/video/upload/v1727119623/7670836-uhd_3840_2160_30fps_ve3buh.mp4"
-      />
-
+    <div className="relative min-h-screen bg-gradient-to-b from-gray-800 to-gray-900">
       {/* Contenido */}
       <div className="relative p-8 min-h-screen">
         {/* Título Principal */}

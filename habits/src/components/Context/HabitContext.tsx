@@ -4,6 +4,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { getHabits } from '../../helpers/habitsHelpers';
 import Habit from '@/interfaces/IHabit';
+import { useAuth } from './AuthContext';
 
 interface HabitContextType {
     habits: Habit[];
@@ -15,15 +16,29 @@ const HabitContext = createContext<HabitContextType | undefined>(undefined);
 
 export const HabitProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [habits, setHabits] = useState<Habit[]>([]);
+  const { user } = useAuth(); 
 
   const refreshHabits = async () => {
-    const fetchedHabits = await getHabits();
-    setHabits(fetchedHabits);
+    if (user) {
+      const userId = localStorage.getItem('userId');
+      if (userId) {
+        const fetchedHabits = await getHabits(userId); 
+        setHabits(fetchedHabits);
+      } else {
+        setHabits([]); 
+      }
+    }
   };
 
   useEffect(() => {
-    refreshHabits(); 
-  }, []);
+    refreshHabits();
+  }, [user]);
+
+  useEffect(() => {
+    if (!user) {
+      setHabits([]); 
+    }
+  }, [user]);
 
   return (
     <HabitContext.Provider value={{ habits, setHabits, refreshHabits  }}>

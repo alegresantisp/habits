@@ -1,11 +1,12 @@
+import About from '@/components/About/About'
 import React from 'react'
 
-const About = () => {
+const AboutUs: React.FC = () => {
   return (
-    <div>
-      
-    </div>
+   
+      <About/>
+   
   )
 }
 
-export default About
+export default AboutUs

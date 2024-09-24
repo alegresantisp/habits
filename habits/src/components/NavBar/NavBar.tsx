@@ -49,15 +49,15 @@ const Navbar = () => {
               </div>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-4 ml-auto">
-              <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/about" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 About Us
               </Link>
               {user ? (
                 <>
-                <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <Link href="/landing" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   <MdOutlineDashboardCustomize  className="inline mr-1" />
                  </Link>
-                 <Link href="/" className="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                 <Link href="/landing" className="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
                     Hola, {user.displayName || 'Usuario'}
                   </Link>
                   <button

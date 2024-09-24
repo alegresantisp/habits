@@ -59,9 +59,9 @@ const LoginForm = () => {
         <source src="https://res.cloudinary.com/dhli2ym3v/video/upload/v1727117061/health_euckg2.mp4" type="video/mp4" />
         Tu navegador no soporta video.
       </video>
-      {/* Superposición grisácea */}
+     
       <div className="absolute top-0 left-0 w-full h-full bg-gray-700 opacity-40"></div>
-      {loading && <Loader />} {/* Muestra el loader si loading es true */}
+      {loading && <Loader />} 
       <div className="relative w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg opacity-90">
         <h1 className="text-3xl font-bold text-center text-green-600">Ingresá para comenzar tu viaje saludable</h1>
         <form onSubmit={formik.handleSubmit} className="space-y-6">

@@ -8,23 +8,43 @@ import Habit from '../../interfaces/IHabit';
 import { FaSeedling, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { deleteHabit } from '../../helpers/habitsHelpers'; 
+import Loader from '../Loader/Loader';
+
 
 const MyHabits = () => {
   const [habits, setHabits] = useState<Habit[]>([]);
+  const [loading, setLoading] = useState(true); 
   const { user } = useAuth();
 
   useEffect(() => {
     const fetchHabits = async () => {
-      if (user) {
+      if (!user) {
+        console.log('User is not authenticated or user ID is undefined');
+        setLoading(false);
+        return;
+      }
+
+      try {
         const q = query(collection(db, 'habits'), where('userId', '==', user.uid));
         const querySnapshot = await getDocs(q);
-        const habitsList: Habit[] = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Habit));
+        const habitsList: Habit[] = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        } as Habit));
         setHabits(habitsList);
+      } catch (error) {
+        console.error('Error fetching habits:', error);
+      } finally {
+        setLoading(false); // Asegúrate de detener el estado de carga
       }
     };
 
     fetchHabits();
   }, [user]);
+
+  if (loading) {
+    return <Loader />; // Mostrar un mensaje mientras carga
+  }
 
   const handleDelete = async (habitId?: string) => {
     if (!habitId) return; 
