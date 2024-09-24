@@ -7,6 +7,7 @@ import { HiMenu, HiX } from 'react-icons/hi';
 import { FaUser, FaSignOutAlt  } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthContext';
 import { MdOutlineDashboardCustomize } from "react-icons/md";
+import Image from 'next/image';
 
 
 const Navbar = () => {
@@ -40,11 +41,15 @@ const Navbar = () => {
             </button>
           </div>
           <div className="flex-1 flex items-center justify-between sm:items-stretch">
-            <div className="flex-shrink-0">
+          <div className="flex-shrink-0">
               <div className="flex items-center space-x-2">
-                <svg className="w-8 h-8 text-yellow-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 12h4v8h8v-8h4V2z" fill="currentColor"/>
-                </svg>
+                <Image
+                  src="https://res.cloudinary.com/dhli2ym3v/image/upload/v1727195795/HT_kn4k1w.jpg"
+                  alt="Logo de SAS HT"
+                  width={32} // Ajusta el ancho según sea necesario
+                  height={32} // Ajusta la altura según sea necesario
+                  className="rounded" // Puedes añadir clases para el estilo
+                />
                 <Link href="/explanation" className="text-2xl font-bold items-center">SAS HT</Link>
               </div>
             </div>
