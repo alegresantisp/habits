@@ -27,7 +27,7 @@ const LandingPage = () => {
         loop
         muted
       >
-        <source src="https://res.cloudinary.com/dhli2ym3v/video/upload/v1727121117/7075988-uhd_4096_2160_30fps_taeak7.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dhli2ym3v/video/upload/v1727144466/16685811-uhd_3840_2160_30fps_kh1jkk.mp4" type="video/mp4" />
         Tu navegador no soporta video.
       </video>
       <div className="relative z-10 min-h-screen bg-transparent p-4 sm:p-6 opacity-90">
