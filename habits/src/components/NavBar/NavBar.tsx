@@ -50,12 +50,12 @@ const Navbar = () => {
                   height={32} // Ajusta la altura según sea necesario
                   className="rounded" // Puedes añadir clases para el estilo
                 />
-                <Link href="/explanation" className="text-2xl font-bold items-center">SAS HT</Link>
+                <Link href="/explanation" className="text-2xl font-bold items-center">HabitTracker</Link>
               </div>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-4 ml-auto">
               <Link href="/about" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                About Us
+                Nosotros
               </Link>
               {user ? (
                 <>
@@ -75,7 +75,7 @@ const Navbar = () => {
               ) : (
                 <Link href="/login" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   <FaUser className="inline mr-1" />
-                  Log In
+                  Ingresa
                 </Link>
               )}
             </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
       <div className={`sm:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-            About Us
+            Nosotros
           </Link>
           {user ? (
             <>
@@ -103,7 +103,7 @@ const Navbar = () => {
           ) : (
             <Link href="/login" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               <FaUser className="inline mr-1" />
-              Log In
+              Ingresa
             </Link>
           )}
         </div>

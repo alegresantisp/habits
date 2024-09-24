@@ -62,7 +62,7 @@ const LoginForm = () => {
      
       <div className="absolute top-0 left-0 w-full h-full bg-gray-700 opacity-40"></div>
       {loading && <Loader />} 
-      <div className="relative w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg opacity-90">
+      <div className="relative w-full max-w-xs md:max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg opacity-90">
         <h1 className="text-3xl font-bold text-center text-green-600">Ingresá para comenzar tu viaje saludable</h1>
         <form onSubmit={formik.handleSubmit} className="space-y-6">
           <div>
