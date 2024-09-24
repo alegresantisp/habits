@@ -48,12 +48,12 @@ const MyHabits = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"> 
-    {habits.map((habit) => (
-      <HabitItem key={habit.id} habit={habit} onDelete={handleDelete} />
-    ))}
-  </div>
-);
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> 
+      {habits.map((habit) => (
+        <HabitItem key={habit.id} habit={habit} onDelete={handleDelete} />
+      ))}
+    </div>
+  );
 };
 
 const HabitItem = ({ habit, onDelete }: { habit: Habit, onDelete: (id?: string) => void }) => {
@@ -64,7 +64,7 @@ const HabitItem = ({ habit, onDelete }: { habit: Habit, onDelete: (id?: string) 
   };
 
   return (
-    <div className="bg-blue-50 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer relative max-w-sm mx-auto">
+    <div className="bg-blue-50 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer h-full flex flex-col justify-between">
       <h2
         onClick={toggleOpen}
         className="text-xl font-semibold mb-4 text-blue-700 hover:text-blue-500 transition duration-200"
@@ -78,7 +78,7 @@ const HabitItem = ({ habit, onDelete }: { habit: Habit, onDelete: (id?: string) 
           <p className="text-gray-700">Recordatorio: {habit.reminderTime || 'No configurado'}</p>
           <button
             onClick={() => onDelete(habit.id)} 
-            className="absolute top-2 right-2 text-red-500 hover:text-red-700"
+            className=" text-red-500 hover:text-red-700"
           >
             <FaTrash size={20} />
           </button>
@@ -90,6 +90,5 @@ const HabitItem = ({ habit, onDelete }: { habit: Habit, onDelete: (id?: string) 
 };
 
 export default MyHabits;
-
 
 

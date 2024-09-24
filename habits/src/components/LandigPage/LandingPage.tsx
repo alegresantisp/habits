@@ -27,7 +27,7 @@ const LandingPage = () => {
         loop
         muted
       >
-        <source src="https://res.cloudinary.com/dhli2ym3v/video/upload/v1727144466/16685811-uhd_3840_2160_30fps_kh1jkk.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dhli2ym3v/video/upload/v1727119623/7670836-uhd_3840_2160_30fps_ve3buh.mp4" type="video/mp4" />
         Tu navegador no soporta video.
       </video>
       <div className="relative z-10 min-h-screen bg-transparent p-4 sm:p-6 opacity-90">
@@ -35,11 +35,11 @@ const LandingPage = () => {
           <h1 className="text-3xl sm:text-4xl font-bold text-violet-800 mb-4">
             Bienvenido a <span className="text-orange-500">Habit</span> Tracker, {user?.displayName || 'Usuario'}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-800">Este es tu Dashboard.</p>
+          <p className="text-lg sm:text-xl text-gray-400">Este es tu Dashboard.</p>
         </div>
         
         <div className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Tus Hábitos</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-400 mb-4">Tus Hábitos</h2>
           <MyHabits /> 
         </div>
         
