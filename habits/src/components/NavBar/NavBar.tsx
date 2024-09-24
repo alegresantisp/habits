@@ -90,7 +90,7 @@ const Navbar = () => {
           {user ? (
             <>
              
-              <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+              <Link href="/landing" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
                 Dashboard
               </Link>
               <button
