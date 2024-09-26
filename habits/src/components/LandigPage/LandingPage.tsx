@@ -43,7 +43,7 @@ const LandingPage = () => {
           <div className="bg-blue-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <h2 className="text-lg sm:text-xl font-semibold mb-2">Ver Contenido</h2>
             <p className="text-gray-600 mb-2">Revisa el contenido de Habit Tracker y mantente al día con las últimas actualizaciones.</p>
-            <Link href="/explanation" className="text-violet-500 hover:underline">Ver Contenido</Link>
+            <Link href="/about" className="text-violet-500 hover:underline">Ver Contenido</Link>
           </div>
         </div>
 
