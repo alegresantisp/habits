@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
   const userId = request.cookies.get('auth_token'); // Ajusta el nombre si es necesario
 
   // Rutas públicas
-  const publicPaths = ['/login', '/about']; // Añade las rutas que deseas hacer públicas
+  const publicPaths = ['/login', '/about', '/explanation']; // Añade las rutas que deseas hacer públicas
 
   // Si el usuario no está autenticado y trata de acceder a una ruta privada
   if (!userId && !publicPaths.includes(pathname)) {
