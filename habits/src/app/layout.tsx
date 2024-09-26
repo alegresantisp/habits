@@ -5,7 +5,6 @@ import NavBar from "@/components/NavBar/NavBar";
 import { AuthProvider } from "@/components/Context/AuthContext";
 import { HabitProvider } from "@/components/Context/HabitContext";
 import Footer from "@/components/Footer/Footer";
-import Head from 'next/head'; 
 
 
 const geistSans = localFont({
@@ -31,13 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link
-          rel="icon"
-          href="https://res.cloudinary.com/dhli2ym3v/image/upload/v1727196623/HT1_lztlpx.ico" 
-          type="image/x-icon"
-        />
-      </Head>
+    
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > 

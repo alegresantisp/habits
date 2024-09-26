@@ -20,26 +20,17 @@ const LandingPage = () => {
   const completionRate = totalCheckmarks > 0 ? (completedCheckmarks / totalCheckmarks) * 100 : 0;
 
   return (
-    <div className="relative min-h-screen p-4 sm:p-6">
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        autoPlay
-        loop
-        muted
-      >
-        <source src="https://res.cloudinary.com/dhli2ym3v/video/upload/v1727119623/7670836-uhd_3840_2160_30fps_ve3buh.mp4" type="video/mp4" />
-        Tu navegador no soporta video.
-      </video>
+    <div className="relative min-h-screen p-4 sm:p-6 bg-gradient-to-b from-gray-300 to-gray-800">
       <div className="relative z-10 min-h-screen bg-transparent p-4 sm:p-6 opacity-90">
         <div className="flex flex-col items-start mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-violet-800 mb-4">
             Bienvenido a <span className="text-orange-500">Habit</span> Tracker, {user?.displayName || 'Usuario'}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400">Este es tu Dashboard.</p>
+          <p className="text-lg sm:text-xl text-gray-500">Este es tu Dashboard.</p>
         </div>
         
         <div className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-400 mb-4">Tus Hábitos</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-500 mb-4">Tus Hábitos</h2>
           <MyHabits /> 
         </div>
         

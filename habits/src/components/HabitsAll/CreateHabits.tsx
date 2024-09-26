@@ -79,11 +79,8 @@ const CreateHabits = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between pb-20">
-      {/* Video de fondo */}
-      <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-0">
-        <source src="https://res.cloudinary.com/dhli2ym3v/video/upload/v1727119623/7670836-uhd_3840_2160_30fps_ve3buh.mp4" type="video/mp4" />
-        Tu navegador no soporta el elemento de video.
-      </video>
+      {/* Fondo de gradiente gris oscuro */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-gray-800 to-gray-900 z-0"></div>
 
       {/* Contenido principal */}
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 relative z-10 p-4 flex-1">
@@ -194,12 +191,7 @@ const CreateHabits = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-4">
-        <div className="container mx-auto text-center">
-          <p>Footer Content</p>
-        </div>
-      </footer>
+      
     </div>
   );
 };
