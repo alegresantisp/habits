@@ -107,11 +107,11 @@ const About = () => {
               className="flex items-center p-4 bg-green-500 text-white rounded cursor-pointer"
             >
               {icons[index]}
-              <h2 className="text-lg font-semibold">{title}</h2>
+              <h2 className="text-lg font-semibold ">{title}</h2>
             </div>
             {activeIndex === index && (
-              <div className="p-4 bg-blue-100 rounded mt-2">
-                <p>{content[index]}</p>
+              <div className="p-4 bg-blue-900 rounded mt-2">
+                <p className="text-white">{content[index]}</p>
               </div>
             )}
           </div>
@@ -119,12 +119,12 @@ const About = () => {
       </div>
 
       {/* Citas Inspiradoras */}
-      <div className="mt-10 p-6 bg-blue-200 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-4 text-center">Citas</h2>
-        <blockquote className="italic text-center">
+      <div className="mt-10 p-6 bg-blue-900 rounded-lg shadow-md">
+        <h2 className="text-2xl font-bold mb-4 text-center text-white">Citas</h2>
+        <blockquote className="italic text-center text-white">
           El éxito es la suma de pequeños esfuerzos repetidos día tras día.
         </blockquote>
-        <blockquote className="italic text-center mt-4">
+        <blockquote className="italic text-center text-white mt-4">
           No cuentes los días, haz que los días cuenten.
         </blockquote>
       </div>
@@ -133,4 +133,3 @@ const About = () => {
 };
 
 export default About;
-

@@ -26,11 +26,11 @@ const LandingPage = () => {
           <h1 className="text-3xl sm:text-4xl font-bold text-violet-800 mb-4">
             Bienvenido a <span className="text-orange-500">Habit</span> Tracker, {user?.displayName || 'Usuario'}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-500">Este es tu Dashboard.</p>
+          <p className="text-lg sm:text-xl text-gray-800">Este es tu Dashboard.</p>
         </div>
         
         <div className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-500 mb-4">Tus Hábitos</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Tus Hábitos</h2>
           <MyHabits /> 
         </div>
         

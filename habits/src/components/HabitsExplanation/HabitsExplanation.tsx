@@ -62,8 +62,8 @@ const HabitsExplanation = () => {
                 )}
               </button>
               {expandedSection === section.id && (
-                <div className="p-6 bg-gray-50">
-                  <p>{section.content}</p>
+                <div className="p-6 bg-blue-900">
+                  <p className="text-white">{section.content}</p>
                 </div>
               )}
             </div>
